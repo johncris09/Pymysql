@@ -1,4 +1,3 @@
-
 import pymysql
 
 """ Connection from database """
@@ -87,10 +86,47 @@ def update_record(emp_id):
                 update_name = new_name
             else:
                 update_name = old_name
-            
-            
             ##Gender
+            print "Old Value for Gender: ", old_gender
+            new_gender = raw_input("New value for Gender: ")
+            if len(new_gender)>0 :
+                update_gender = new_gender
+            else:
+                update_gender = old_gender
+            
+            ##Address
+            print "Old Value for Adress: ", old_address
+            new_address = raw_input("New value for Address: ")
+            if len(new_address) >0:
+                update_address = new_address
+            else:
+                update_address = old_address
+            
+            ##Birthdate
+            print "Old value for Birthdate: ", old_birthdate
+            new_birthdate = raw_input("New value for Birthdate: ")
+            if len(new_birthdate)>0:
+                update_birthdate = new_birthdate
+            else:
+                update_birthdate = old_birthdate
+            
+            ##Birthplace
+            print "Old value for Birthplace: ", old_birthplace
+            new_birthplace = raw_input("New value for Birthplace: ")
+            if len(new_birthplace)>0:
+                update_birthplace = new_birthdate
+            else:
+                update_birthplace = old_birthplace
+            
+            ##Status
+            print "Old value for Status: ", old_status
+            new_status = raw_input("New value for Status: ")
+            if len(new_status) > 0:
+                update_status = new_status
+            else:
+                update_status = old_status
 
+            
         else:
             print "ID '" + emp_id + "' is not Exist!"
         #except:
@@ -119,6 +155,7 @@ def delete_record(emp_id):
     connection.commit()
 ##    finally:
 ##        connection.close()
+
 
 
 
@@ -180,5 +217,6 @@ while loop:
         else:
             print 'Invalid Choice'
             loop_2 = 1
+
 
 
