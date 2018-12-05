@@ -87,9 +87,22 @@ def update_record(emp_id):
                 update_name = new_name
             else:
                 update_name = old_name
-            
-            
             ##Gender
+            new_gender = "Old Value for Gender: ", old_gender
+            if len(new_gender)>0 :
+                update_gender = new_gender
+            else:
+                update_gender = old_gender
+            
+            ##Address
+            new_address = "Old Value for Adress: ", old_address
+            if len(new_address) >0:
+                update_address = new_address
+            else:
+                update_address = old_address
+            
+            ##Birthdate
+            new_birthdate = 
 
         else:
             print "ID '" + emp_id + "' is not Exist!"
@@ -119,6 +132,7 @@ def delete_record(emp_id):
     connection.commit()
 ##    finally:
 ##        connection.close()
+
 
 
 
