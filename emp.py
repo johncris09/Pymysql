@@ -86,6 +86,7 @@ def update_record(emp_id):
                 update_name = new_name
             else:
                 update_name = old_name
+            
             ##Gender
             print "Old Value for Gender: ", old_gender
             new_gender = raw_input("New value for Gender: ")
@@ -125,8 +126,12 @@ def update_record(emp_id):
                 update_status = new_status
             else:
                 update_status = old_status
-
+                
+            ##update_this_record = "UPDATE `employee` SET `name`=" + "'" + update_name + "'" + ", `gender`=" + "'" + update_gender + "'" + ",`address`=" + "'" + update_address + "'" + ", `birthdate`=" + "'" + str(update_birthdate) + "'" + ",`birthplace`=" + "'" + update_birthplace + "'" + ", `status`=" + "'" + update_status + "'" + " WHERE emp_id = " + emp_id
+            update_this_record = "UPDATE `employee` SET `name`= %s, `gender`= %s,`address`= %s, `birthdate`= %s, `birthplace`= %s, `status`= %s WHERE emp_id = %s" 
             
+            cursor.execute(update_this_record, (update_name,update_gender,update_address,str(update_birthdate),update_birthplace,update_status,str(emp_id)))
+            print("New Record Successfully Updated!")
         else:
             print "ID '" + emp_id + "' is not Exist!"
         #except:
